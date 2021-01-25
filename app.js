@@ -48,26 +48,25 @@ If number was is not prime, program write us - "It's not a prime".
 Also program write us that number "It's prime" if number will be prime. */
 
 function getPrime(num) {
-    for(let i = 2; i < 10; i++) {
-      if(!isPrime(num)) {
-        console.log(`${num} It's not a prime number.`);
-
-        return;
-      } else {
-
-      console.log(`${num} It's a prime number.`)
-
+  for(let i = 0; i < 10; i++) { 
+    if(!isPrime(num)) {
+      console.log(`${num} It's not prime.`);
       return;
-      }
+    } else { 
+    console.log(`${num} It's prime.`)   
+    return;
     }
-  } 
-    
-  function checkPrime(num) {
-    for(let i = 2; i < num; i++) {
-      return (num % i == 0) ? false : true;
-    }
-  }          
-             
-  let num = prompt("Please, write number, and check it on prime: ", 0);    
+  }
+} 
+  
+function isPrime(num) {
+  for(let i = 0; i < num; i++) {
+    if(num == 2) return true;
+    if(num % i == 0 || num == 1 || num == 0) return false;
+  }    
+  return true;
+}                                  
+                                       
+let num = prompt("Write please number, check it on prime: ", 0);    
 
-  getPrime(num);
+getPrime(num);      
